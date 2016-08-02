@@ -61,7 +61,6 @@ public class JakesCraftingEssentials
     @EventHandler
     public void init(FMLInitializationEvent e) {
         FMLCommonHandler.instance().bus().register(new EventConfigChanged());
-
         proxy.init(e);
     }
 

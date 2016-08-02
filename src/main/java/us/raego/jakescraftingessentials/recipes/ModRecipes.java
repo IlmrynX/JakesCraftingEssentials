@@ -43,6 +43,8 @@ public class ModRecipes {
     private static IRecipe enderPearlRecipe;
 
     public static void registerRecipes() {
+        updateRecipesFromConfig();
+
         GameRegistry.addRecipe(gunpowderRecipe = new ShapedOreRecipe(new ItemStack(Items.gunpowder, GUNPOWDER_AMOUNT),
                 " C ",
                 "GS ",
@@ -85,8 +87,6 @@ public class ModRecipes {
         blazeRodRecipe.getRecipeOutput().stackSize = BLAZE_ROD_AMOUNT;
         enderPearlRecipe.getRecipeOutput().stackSize = ENDER_PEARL_AMOUNT;
 
-        GameRegistry.addRecipe(gunpowderRecipe);
-        GameRegistry.addRecipe(blazeRodRecipe);
-        GameRegistry.addRecipe(enderPearlRecipe);
+        RecipeUtils.addRecipes(gunpowderRecipe, blazeRodRecipe, enderPearlRecipe);
     }
 }

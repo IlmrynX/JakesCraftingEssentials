@@ -23,6 +23,7 @@
 package us.raego.jakescraftingessentials.utils;
 
 import com.google.common.collect.Lists;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
@@ -47,6 +48,12 @@ public class RecipeUtils {
 
         for (IRecipe recipe : toRemove) {
             recipes.remove(recipe);
+        }
+    }
+
+    public static void addRecipes(IRecipe... recipesToAdd) {
+        for (IRecipe recipe : recipesToAdd) {
+            GameRegistry.addRecipe(recipe);
         }
     }
 }
