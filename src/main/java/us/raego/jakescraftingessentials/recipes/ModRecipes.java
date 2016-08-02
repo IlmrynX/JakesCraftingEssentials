@@ -42,19 +42,25 @@ public class ModRecipes {
     private static IRecipe blazeRodRecipe;
     private static IRecipe enderPearlRecipe;
 
+    public static void updateRecipesFromConfig() {
+        GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1).getInt();
+        BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2).getInt();
+        ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8).getInt();
+    }
+
     public static void registerRecipes() {
         updateRecipesFromConfig();
 
-        GameRegistry.addRecipe(gunpowderRecipe = new ShapedOreRecipe(new ItemStack(Items.gunpowder, GUNPOWDER_AMOUNT),
+        RecipeUtils.addRecipes(
+                gunpowderRecipe = new ShapedOreRecipe(new ItemStack(Items.gunpowder, GUNPOWDER_AMOUNT),
                 " C ",
                 "GS ",
                 " R ",
                 'C', new ItemStack(Items.coal, 1, WILDCARD_VALUE),
                 'G', "dustGlowstone",
                 'S', Items.sugar,
-                'R', "dustRedstone"));
-
-        GameRegistry.addRecipe(blazeRodRecipe = new ShapedOreRecipe(new ItemStack(Items.blaze_rod, BLAZE_ROD_AMOUNT),
+                'R', "dustRedstone"),
+                blazeRodRecipe = new ShapedOreRecipe(new ItemStack(Items.blaze_rod, BLAZE_ROD_AMOUNT),
                 "CGS",
                 "GLN",
                 "SNC",
@@ -62,9 +68,8 @@ public class ModRecipes {
                 'G', "dustGlowstone",
                 'S', "stickWood",
                 'N', "gemQuartz",
-                'L', Items.lava_bucket));
-
-        GameRegistry.addRecipe(enderPearlRecipe = new ShapedOreRecipe(new ItemStack(Items.ender_pearl, ENDER_PEARL_AMOUNT),
+                'L', Items.lava_bucket),
+                enderPearlRecipe = new ShapedOreRecipe(new ItemStack(Items.ender_pearl, ENDER_PEARL_AMOUNT),
                 "LRL",
                 "GDG",
                 "LRL",
@@ -72,12 +77,6 @@ public class ModRecipes {
                 'R', "blockRedstone",
                 'G', "ingotGold",
                 'D', "gemDiamond"));
-    }
-
-    public static void updateRecipesFromConfig() {
-        GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1).getInt();
-        BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2).getInt();
-        ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8).getInt();
     }
 
     public static void updateRecipesInCraftingManager() {
