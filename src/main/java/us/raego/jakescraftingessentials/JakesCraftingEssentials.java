@@ -22,6 +22,7 @@
 
 package us.raego.jakescraftingessentials;
 
+import cofh.core.util.ConfigHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -30,31 +31,30 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import us.raego.jakescraftingessentials.common.CommonProxy;
 import us.raego.jakescraftingessentials.events.EventConfigChanged;
 
-@Mod(modid = JakesCraftingEssentials.MODID,
-        name = JakesCraftingEssentials.MODNAME,
-        version = JakesCraftingEssentials.VERSION,
-        guiFactory = "us.raego.jakescraftingessentials.client.gui.JakesEssentialsGuiFactory")
+@Mod(modid = JakesCraftingEssentials.modId, name = JakesCraftingEssentials.modName, version = JakesCraftingEssentials.version, guiFactory = "us.raego.jakescraftingessentials.client.gui.JakesEssentialsGuiFactory")
 public class JakesCraftingEssentials
 {
-    public static final String MODID = "jakescraftingessentials";
-    public static final String MODNAME = "Jake\'s Crafting Essentials";
-    public static final String VERSION = "1.1";
+    public static final String modId = "jakescraftingessentials";
+    public static final String modName = "Jake's Crafting Essentials";
+    public static final String version = "1.7.10-1.1";
 
-    @SidedProxy(clientSide = "us.raego.jakescraftingessentials.client.ClientProxy",
-                serverSide = "us.raego.jakescraftingessentials.common.CommonProxy")
+    @Mod.Instance(modId)
+    public static JakesCraftingEssentials instance;
+
+    @SidedProxy(clientSide = "us.raego.jakescraftingessentials.client.ClientProxy", serverSide = "us.raego.jakescraftingessentials.common.CommonProxy")
     public static CommonProxy proxy;
 
-    public static Configuration config;
-
-    @Mod.Instance(MODID)
-    public static JakesCraftingEssentials instance;
+    public static final Logger log = LogManager.getLogger(modId);
+    public static final ConfigHandler config = new ConfigHandler(version);
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        config = new Configuration(e.getSuggestedConfigurationFile());
+        config.setConfiguration(new Configuration(e.getSuggestedConfigurationFile()));
         proxy.preInit(e);
     }
 

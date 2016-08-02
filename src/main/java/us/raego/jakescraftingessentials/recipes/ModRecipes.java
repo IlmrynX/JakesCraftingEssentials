@@ -22,7 +22,6 @@
 
 package us.raego.jakescraftingessentials.recipes;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -43,9 +42,9 @@ public class ModRecipes {
     private static IRecipe enderPearlRecipe;
 
     public static void updateRecipesFromConfig() {
-        GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1).getInt();
-        BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2).getInt();
-        ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8).getInt();
+        GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1);
+        BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2);
+        ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8);
     }
 
     public static void registerRecipes() {

@@ -20,24 +20,17 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.common;
+package us.raego.jakescraftingessentials.items.tools;
 
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import us.raego.jakescraftingessentials.recipes.ModRecipes;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemSword;
+import us.raego.jakescraftingessentials.JakesCraftingEssentials;
 
-public class CommonProxy {
-
-    public void preInit(FMLPreInitializationEvent e) {
-        ModRecipes.registerRecipes();
-    }
-
-    public void init(FMLInitializationEvent e) {
-
-    }
-
-    public void postInit(FMLPostInitializationEvent e) {
-
+public class BasicSwordItem extends ItemSword {
+    public BasicSwordItem(String unlocalizedName, ToolMaterial p_i45356_1_) {
+        super(p_i45356_1_);
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(JakesCraftingEssentials.modId + ":" + unlocalizedName);
+        this.setCreativeTab(CreativeTabs.tabCombat);
     }
 }

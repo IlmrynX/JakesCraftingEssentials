@@ -30,7 +30,7 @@ import us.raego.jakescraftingessentials.recipes.ModRecipes;
 public class EventConfigChanged {
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-        if(eventArgs.modID.equals(JakesCraftingEssentials.MODID))
+        if(eventArgs.modID.equals(JakesCraftingEssentials.modId))
             syncConfig();
     }
 
@@ -38,7 +38,7 @@ public class EventConfigChanged {
         ModRecipes.updateRecipesFromConfig();
         ModRecipes.updateRecipesInCraftingManager();
 
-        if(JakesCraftingEssentials.config.hasChanged())
+        if(JakesCraftingEssentials.config.getConfiguration().hasChanged())
             JakesCraftingEssentials.config.save();
     }
 }

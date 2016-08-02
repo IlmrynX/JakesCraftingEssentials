@@ -20,32 +20,45 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.client.gui;
+package us.raego.jakescraftingessentials.items.tools;
 
-import cpw.mods.fml.client.IModGuiFactory;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
+import cofh.api.energy.IEnergyContainerItem;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 
-import java.util.Set;
-
-public class JakesEssentialsGuiFactory implements IModGuiFactory {
-    @Override
-    public void initialize(Minecraft minecraftInstance) {
-
+public class ItemCreeperDisablerSword extends BasicSwordItem implements IEnergyContainerItem {
+    public ItemCreeperDisablerSword(String unlocalizedName, ToolMaterial p_i45356_1_) {
+        super(unlocalizedName, p_i45356_1_);
     }
 
     @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return JakesEssentialsGuiConfig.class;
+    public int receiveEnergy(ItemStack itemStack, int i, boolean b) {
+        return 0;
     }
 
     @Override
-    public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
-        return null;
+    public int extractEnergy(ItemStack itemStack, int i, boolean b) {
+        return 0;
     }
 
     @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-        return null;
+    public int getEnergyStored(ItemStack itemStack) {
+        return 0;
+    }
+
+    @Override
+    public int getMaxEnergyStored(ItemStack itemStack) {
+        return 0;
+    }
+
+    public boolean hitEntity(ItemStack stack, EntityLivingBase entity, EntityLivingBase playerEntity) {
+        if(playerEntity instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer)playerEntity;
+            ItemStack sword = player.getItemInUse();
+            // Deal with energy handling here
+        }
+
+        return true;
     }
 }

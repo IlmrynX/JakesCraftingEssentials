@@ -1,5 +1,4 @@
-[
-{
+[{
   "modid": "jakescraftingessentials",
   "name": "Jake's Crafting Essentials",
   "description": "A mod for Jake's channel",
@@ -10,7 +9,8 @@
   "authorList": ["IlmrynX"],
   "credits": "To Jake!",
   "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+  "screenshots": [
+  ],
+  "dependencies": [
+  ]
+}]

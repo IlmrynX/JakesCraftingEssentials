@@ -28,17 +28,15 @@ import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import us.raego.jakescraftingessentials.JakesCraftingEssentials;
 
-class JakesEssentialsGuiConfig extends GuiConfig {
+public class JakesEssentialsGuiConfig extends GuiConfig {
         public JakesEssentialsGuiConfig(GuiScreen parent)
         {
             super(parent,
-                    new ConfigElement(
-                            JakesCraftingEssentials.config.getCategory(Configuration.CATEGORY_GENERAL))
-                            .getChildElements(),
-                    JakesCraftingEssentials.MODID,
+                    new ConfigElement(JakesCraftingEssentials.config.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(),
+                    JakesCraftingEssentials.modId,
                     false,
                     false,
-                    "Jake\'s Crafting Essentials Config!");
+                    "Jake's Crafting Essentials Config!");
             titleLine2 = JakesCraftingEssentials.config.toString();
         }
 }
