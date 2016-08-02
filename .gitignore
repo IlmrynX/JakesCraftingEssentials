@@ -59,4 +59,3 @@ fabric.properties
 .gradle/
 build/
 run/
-libs/
