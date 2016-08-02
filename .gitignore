@@ -56,4 +56,7 @@ fabric.properties
 # *.ipr
 
 # Minecraft Build directory
+.gradle/
+build/
 eclipse/
+
