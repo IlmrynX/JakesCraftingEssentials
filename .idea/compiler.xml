@@ -22,6 +22,9 @@
       <module name="ForgeSimple_api" target="1.6" />
       <module name="ForgeSimple_main" target="1.6" />
       <module name="ForgeSimple_test" target="1.6" />
+      <module name="JakesCraftingEssentials_api" target="1.6" />
+      <module name="JakesCraftingEssentials_main" target="1.6" />
+      <module name="JakesCraftingEssentials_test" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

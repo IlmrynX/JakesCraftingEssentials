@@ -58,5 +58,5 @@ fabric.properties
 # Minecraft Build directory
 .gradle/
 build/
-eclipse/
+run/
 

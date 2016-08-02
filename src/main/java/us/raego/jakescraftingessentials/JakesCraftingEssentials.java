@@ -19,6 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+
 package us.raego.jakescraftingessentials;
 
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -29,7 +30,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
-import us.raego.jakescraftingessentials.events.ConfigurationChanged;
+import us.raego.jakescraftingessentials.common.CommonProxy;
+import us.raego.jakescraftingessentials.events.EventConfigChanged;
 
 @Mod(modid = JakesCraftingEssentials.MODID,
         name = JakesCraftingEssentials.MODNAME,
@@ -38,11 +40,11 @@ import us.raego.jakescraftingessentials.events.ConfigurationChanged;
 public class JakesCraftingEssentials
 {
     public static final String MODID = "jakescraftingessentials";
-    static final String MODNAME = "Jake\'s Crafting Essentials";
+    public static final String MODNAME = "Jake\'s Crafting Essentials";
     public static final String VERSION = "1.1";
 
-    @SidedProxy(clientSide="us.raego.jakescraftingessentials.client.ClientProxy",
-                serverSide = "us.raego.jakescraftingessentials.client.ClientProxy")
+    @SidedProxy(clientSide = "us.raego.jakescraftingessentials.client.ClientProxy",
+                serverSide = "us.raego.jakescraftingessentials.common.CommonProxy")
     public static CommonProxy proxy;
 
     public static Configuration config;
@@ -58,7 +60,7 @@ public class JakesCraftingEssentials
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
-        FMLCommonHandler.instance().bus().register(new ConfigurationChanged());
+        FMLCommonHandler.instance().bus().register(new EventConfigChanged());
 
         proxy.init(e);
     }

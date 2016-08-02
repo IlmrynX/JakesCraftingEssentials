@@ -20,31 +20,24 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.client.gui;
+package us.raego.jakescraftingessentials.events;
 
-import cpw.mods.fml.client.IModGuiFactory;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import us.raego.jakescraftingessentials.JakesCraftingEssentials;
+import us.raego.jakescraftingessentials.recipes.ModRecipes;
 
-import java.util.Set;
-
-public class JakesEssentialsGuiFactory implements IModGuiFactory {
-    @Override
-    public void initialize(Minecraft minecraftInstance) {
+public class EventConfigChanged {
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+        if(eventArgs.modID.equals(JakesCraftingEssentials.MODID))
+            syncConfig();
     }
 
-    @Override
-    public Class<? extends GuiScreen> mainConfigGuiClass() {
-        return JakesEssentialsGuiConfig.class;
-    }
+    private static void syncConfig() {
+        ModRecipes.updateRecipesInCraftingManager();
 
-    @Override
-    public Set<RuntimeOptionCategoryElement> runtimeGuiCategories() {
-        return null;
-    }
-
-    @Override
-    public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-        return null;
+        if(JakesCraftingEssentials.config.hasChanged())
+            JakesCraftingEssentials.config.save();
     }
 }

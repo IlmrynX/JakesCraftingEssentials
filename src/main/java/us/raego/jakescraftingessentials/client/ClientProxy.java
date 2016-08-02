@@ -19,20 +19,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
+
 package us.raego.jakescraftingessentials.client;
 
-/**
- * Created by Tristan on 7/27/2016.
- */
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import us.raego.jakescraftingessentials.CommonProxy;
+import us.raego.jakescraftingessentials.common.CommonProxy;
 import us.raego.jakescraftingessentials.recipes.ModRecipes;
 
-/**
- * Created by Tristan on 6/29/2016.
- */
 public class ClientProxy extends CommonProxy {
 
     @Override

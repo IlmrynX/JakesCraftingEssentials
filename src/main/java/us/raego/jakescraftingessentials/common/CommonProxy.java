@@ -19,15 +19,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-package us.raego.jakescraftingessentials;
+
+package us.raego.jakescraftingessentials.common;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-/**
- * Created by Tristan on 6/29/2016.
- */
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
