@@ -21,12 +21,6 @@
  */
 package us.raego.jakescraftingessentials;
 
-import cpw.mods.fml.common.Mod;
-
-/**
- * Created by Tristan on 7/27/2016.
- */
-
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -34,33 +28,38 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import us.raego.jakescraftingessentials.recipes.ModRecipes;
+import net.minecraftforge.common.config.Configuration;
+import us.raego.jakescraftingessentials.events.ConfigurationChanged;
 
-@Mod(modid = JakesCraftingEssentials.MODID, name = JakesCraftingEssentials.MODNAME, version = JakesCraftingEssentials.VERSION)
+@Mod(modid = JakesCraftingEssentials.MODID,
+        name = JakesCraftingEssentials.MODNAME,
+        version = JakesCraftingEssentials.VERSION,
+        guiFactory = "us.raego.jakescraftingessentials.client.gui.JakesEssentialsGuiFactory")
 public class JakesCraftingEssentials
 {
     public static final String MODID = "jakescraftingessentials";
-    public static final String MODNAME = "Jake\'s Crafting Essentials";
+    static final String MODNAME = "Jake\'s Crafting Essentials";
     public static final String VERSION = "1.1";
 
-    @SidedProxy(clientSide="us.raego.jakescraftingessentials.client.ClientProxy", serverSide = "us.raego.jakescraftingessentials.client.ClientProxy")
+    @SidedProxy(clientSide="us.raego.jakescraftingessentials.client.ClientProxy",
+                serverSide = "us.raego.jakescraftingessentials.client.ClientProxy")
     public static CommonProxy proxy;
 
-    @Mod.Instance
+    public static Configuration config;
+
+    @Mod.Instance(MODID)
     public static JakesCraftingEssentials instance;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
+        config = new Configuration(e.getSuggestedConfigurationFile());
         proxy.preInit(e);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
+        FMLCommonHandler.instance().bus().register(new ConfigurationChanged());
+
         proxy.init(e);
     }
 
