@@ -1,0 +1,16 @@
+[
+{
+  "modid": "JakesCraftingEssentials",
+  "name": "Jake's Crafting Essentials",
+  "description": "A mod for Jake's channel",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["IlmrynX"],
+  "credits": "To Jake!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
