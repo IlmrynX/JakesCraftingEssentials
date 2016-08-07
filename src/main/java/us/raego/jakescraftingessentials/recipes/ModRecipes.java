@@ -26,6 +26,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import us.raego.jakescraftingessentials.JakesCraftingEssentials;
 import us.raego.jakescraftingessentials.utils.RecipeUtils;
@@ -83,7 +84,7 @@ public class ModRecipes {
                 "GSG",
                 " G ",
                 'G', "blockGlass",
-                'S', "blockSand"));
+                'S', "sand"));
     }
 
     public static void updateRecipesInCraftingManager() {
