@@ -36,15 +36,18 @@ public class ModRecipes {
     private static int GUNPOWDER_AMOUNT;
     private static int BLAZE_ROD_AMOUNT;
     private static int ENDER_PEARL_AMOUNT;
+    private static int QUARTZ_AMOUNT;
 
     private static IRecipe gunpowderRecipe;
     private static IRecipe blazeRodRecipe;
     private static IRecipe enderPearlRecipe;
+    private static IRecipe quartzRecipe;
 
     public static void updateRecipesFromConfig() {
         GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1);
         BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2);
         ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8);
+        QUARTZ_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Quartz from recipe", 8);
     }
 
     public static void registerRecipes() {
@@ -74,17 +77,23 @@ public class ModRecipes {
                 "LRL",
                 'L', "gemLapis",
                 'R', "blockRedstone",
-                'G', "ingotGold",
-                'D', "gemDiamond"));
+                'G', "ingotGold", 'D', "gemDiamond"),
+                quartzRecipe = new ShapedOreRecipe(new ItemStack(Items.quartz, QUARTZ_AMOUNT),
+                " G ",
+                "GSG",
+                " G ",
+                'G', "blockGlass",
+                'S', "blockSand"));
     }
 
     public static void updateRecipesInCraftingManager() {
-        RecipeUtils.removeRecipes(gunpowderRecipe, blazeRodRecipe, enderPearlRecipe);
+        RecipeUtils.removeRecipes(gunpowderRecipe, blazeRodRecipe, enderPearlRecipe, quartzRecipe);
 
         gunpowderRecipe.getRecipeOutput().stackSize = GUNPOWDER_AMOUNT;
         blazeRodRecipe.getRecipeOutput().stackSize = BLAZE_ROD_AMOUNT;
         enderPearlRecipe.getRecipeOutput().stackSize = ENDER_PEARL_AMOUNT;
+        quartzRecipe.getRecipeOutput().stackSize = QUARTZ_AMOUNT;
 
-        RecipeUtils.addRecipes(gunpowderRecipe, blazeRodRecipe, enderPearlRecipe);
+        RecipeUtils.addRecipes(gunpowderRecipe, blazeRodRecipe, enderPearlRecipe, quartzRecipe);
     }
 }
