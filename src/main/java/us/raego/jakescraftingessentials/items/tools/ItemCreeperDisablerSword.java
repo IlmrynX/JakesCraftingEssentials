@@ -22,14 +22,18 @@
 
 package us.raego.jakescraftingessentials.items.tools;
 
+import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyContainerItem;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
 public class ItemCreeperDisablerSword extends BasicSwordItem implements IEnergyContainerItem {
+    public EnergyStorage energyStorage;
+
     public ItemCreeperDisablerSword(String unlocalizedName, ToolMaterial p_i45356_1_) {
         super(unlocalizedName, p_i45356_1_);
+        //energyStorage = new EnergyStorage();
     }
 
     @Override
