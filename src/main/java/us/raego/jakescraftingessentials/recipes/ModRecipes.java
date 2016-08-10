@@ -83,7 +83,7 @@ public class ModRecipes {
                 "GSG",
                 " G ",
                 'G', "blockGlass",
-                'S', "sand"));
+                'S', "compressedSand2x"));
     }
 
     public static void updateRecipesInCraftingManager() {
