@@ -43,7 +43,7 @@ public class ModRecipes {
     private static IRecipe enderPearlRecipe;
     private static IRecipe quartzRecipe;
 
-    public static void updateRecipesFromConfig() {
+    public static void loadRecipeAmountsFromConfig() {
         GUNPOWDER_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Gunpowder from recipe", 1);
         BLAZE_ROD_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Blaze Rods from recipe", 2);
         ENDER_PEARL_AMOUNT = JakesCraftingEssentials.config.get(Configuration.CATEGORY_GENERAL, "Ender Pearls from recipe", 8);
@@ -51,7 +51,7 @@ public class ModRecipes {
     }
 
     public static void registerRecipes() {
-        updateRecipesFromConfig();
+        loadRecipeAmountsFromConfig();
 
         RecipeUtils.addRecipes(
                 gunpowderRecipe = new ShapedOreRecipe(new ItemStack(Items.gunpowder, GUNPOWDER_AMOUNT),

@@ -1,16 +1,26 @@
-[{
-  "modid": "jakescraftingessentials",
-  "name": "Jake's Crafting Essentials",
-  "description": "A mod for Jake's channel",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["IlmrynX"],
-  "credits": "To Jake!",
-  "logoFile": "",
-  "screenshots": [
-  ],
-  "dependencies": [
-  ]
-}]
+[
+   {
+      "modid":"jakescraftingessentials",
+      "name":"Jake's Crafting Essentials",
+      "description":"A mod for Jake's channel",
+      "version":"${version}",
+      "mcversion":"${mcversion}",
+      "url":"",
+      "updateUrl":"",
+      "authorList":[
+         "IlmrynX"
+      ],
+      "credits":"To Jake!",
+      "logoFile":"",
+      "screenshots":[
+
+      ],
+      "requiredMods":[
+         "ExtraUtilities"
+      ],
+      "dependencies":[
+         "ExtraUtilities"
+      ],
+      "useDependencyInformation":true
+   }
+]

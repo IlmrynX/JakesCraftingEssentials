@@ -35,7 +35,7 @@ public class EventConfigChanged {
     }
 
     private static void syncConfig() {
-        ModRecipes.updateRecipesFromConfig();
+        ModRecipes.loadRecipeAmountsFromConfig();
         ModRecipes.updateRecipesInCraftingManager();
 
         if(JakesCraftingEssentials.config.getConfiguration().hasChanged())
