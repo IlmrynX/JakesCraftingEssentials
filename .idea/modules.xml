@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials.iml" filepath="$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_api.iml" filepath="$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_api.iml" group="JakesCraftingEssentials" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_main.iml" filepath="$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_main.iml" group="JakesCraftingEssentials" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_test.iml" filepath="$PROJECT_DIR$/.idea/modules/JakesCraftingEssentials_test.iml" group="JakesCraftingEssentials" />
     </modules>
   </component>
 </project>

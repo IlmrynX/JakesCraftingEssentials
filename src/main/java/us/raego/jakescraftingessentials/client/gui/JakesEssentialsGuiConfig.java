@@ -37,6 +37,6 @@ public class JakesEssentialsGuiConfig extends GuiConfig {
                     false,
                     false,
                     "Jake's Crafting Essentials Config!");
-            titleLine2 = JakesCraftingEssentials.config.getConfiguration().toString();
+            titleLine2 = JakesCraftingEssentials.config.toString();
         }
 }
