@@ -20,25 +20,17 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.events;
+package us.raego.jakescraftingessentials.item.tools;
 
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemSword;
 import us.raego.jakescraftingessentials.JakesCraftingEssentials;
-import us.raego.jakescraftingessentials.recipes.ModRecipes;
 
-public class EventConfigChanged {
-    @SubscribeEvent
-    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
-        if(eventArgs.modID.equals(JakesCraftingEssentials.modId))
-            syncConfig();
-    }
-
-    private static void syncConfig() {
-        ModRecipes.loadRecipeAmountsFromConfig();
-        ModRecipes.updateRecipesInCraftingManager();
-
-        if(JakesCraftingEssentials.config.getConfiguration().hasChanged())
-            JakesCraftingEssentials.config.save();
+public class BasicSwordItem extends ItemSword {
+    public BasicSwordItem(String unlocalizedName, ToolMaterial p_i45356_1_) {
+        super(p_i45356_1_);
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(JakesCraftingEssentials.modId + ":" + unlocalizedName);
+        this.setCreativeTab(CreativeTabs.tabCombat);
     }
 }

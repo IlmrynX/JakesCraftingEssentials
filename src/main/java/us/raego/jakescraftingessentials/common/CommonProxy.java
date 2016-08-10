@@ -25,7 +25,7 @@ package us.raego.jakescraftingessentials.common;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import us.raego.jakescraftingessentials.recipes.ModRecipes;
+import us.raego.jakescraftingessentials.recipe.ModRecipes;
 
 public class CommonProxy {
 
@@ -34,7 +34,6 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-
     }
 
     public void postInit(FMLPostInitializationEvent e) {

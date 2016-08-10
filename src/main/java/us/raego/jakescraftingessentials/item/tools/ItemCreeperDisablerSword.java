@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.items.tools;
+package us.raego.jakescraftingessentials.item.tools;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyContainerItem;

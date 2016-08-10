@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.recipes;
+package us.raego.jakescraftingessentials.recipe;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

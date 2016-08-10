@@ -20,7 +20,25 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.items;
+package us.raego.jakescraftingessentials.event;
 
-public class ModItems {
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import us.raego.jakescraftingessentials.JakesCraftingEssentials;
+import us.raego.jakescraftingessentials.recipe.ModRecipes;
+
+public class EventConfigChanged {
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent eventArgs) {
+        if(eventArgs.modID.equals(JakesCraftingEssentials.modId))
+            syncConfig();
+    }
+
+    private static void syncConfig() {
+        ModRecipes.loadRecipeAmountsFromConfig();
+        ModRecipes.updateRecipesInCraftingManager();
+
+        if(JakesCraftingEssentials.config.getConfiguration().hasChanged())
+            JakesCraftingEssentials.config.save();
+    }
 }

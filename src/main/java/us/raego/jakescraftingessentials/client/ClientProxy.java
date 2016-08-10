@@ -26,7 +26,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import us.raego.jakescraftingessentials.common.CommonProxy;
-import us.raego.jakescraftingessentials.recipes.ModRecipes;
 
 public class ClientProxy extends CommonProxy {
 

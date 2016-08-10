@@ -20,17 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-package us.raego.jakescraftingessentials.items.tools;
+package us.raego.jakescraftingessentials.item;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemSword;
-import us.raego.jakescraftingessentials.JakesCraftingEssentials;
-
-public class BasicSwordItem extends ItemSword {
-    public BasicSwordItem(String unlocalizedName, ToolMaterial p_i45356_1_) {
-        super(p_i45356_1_);
-        this.setUnlocalizedName(unlocalizedName);
-        this.setTextureName(JakesCraftingEssentials.modId + ":" + unlocalizedName);
-        this.setCreativeTab(CreativeTabs.tabCombat);
-    }
+public class ModItems {
 }

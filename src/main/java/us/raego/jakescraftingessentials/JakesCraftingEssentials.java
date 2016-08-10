@@ -34,7 +34,7 @@ import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import us.raego.jakescraftingessentials.common.CommonProxy;
-import us.raego.jakescraftingessentials.events.EventConfigChanged;
+import us.raego.jakescraftingessentials.event.EventConfigChanged;
 
 @Mod(modid = JakesCraftingEssentials.modId, name = JakesCraftingEssentials.modName, version = JakesCraftingEssentials.version, guiFactory = "us.raego.jakescraftingessentials.client.gui.JakesEssentialsGuiFactory")
 public class JakesCraftingEssentials
